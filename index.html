@@ -2,758 +2,747 @@
 <!DOCTYPE html>
 <html lang="ht">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-
-<title>Cheetah Xpress | Premium Gaming Store</title>
-<meta name="description" content="Achte Free Fire Diamonds, Abònman ak Booyah Pass nan Cheetah Xpress. Fè kòmand ou fasil sou WhatsApp.">
-
-<style>
-:root {
-  --bg: #090909;
-  --panel: #141414;
-  --panel2: #1c1a17;
-  --gold: #f5c451;
-  --orange: #f28a24;
-  --white: #fff;
-  --muted: #aaa69d;
-  --green: #25d366;
-  --border: rgba(245,196,81,.19);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--white);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-a { text-decoration: none; color: inherit; }
-
-.container {
-  width: min(1100px, 92%);
-  margin: auto;
-}
-
-/* NAVIGATION */
-
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(9,9,9,.94);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-content {
-  min-height: 75px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  color: var(--gold);
-  font-size: 19px;
-}
-
-.brand img {
-  width: 47px;
-  height: 47px;
-  object-fit: contain;
-  border-radius: 10px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.nav-links a:hover { color: var(--gold); }
-
-.nav-cta {
-  background: var(--gold);
-  color: #111;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-weight: 900;
-}
-
-/* HERO */
-
-.hero {
-  position: relative;
-  overflow: hidden;
-  padding: 85px 15px;
-  text-align: center;
-  background:
-    radial-gradient(ellipse at 50% 0%, #55300e 0%, transparent 65%),
-    linear-gradient(145deg,#19140e,#090909 70%);
-  border-bottom: 1px solid var(--border);
-}
-
-.hero::before {
-  content: "CHEETAH";
-  position: absolute;
-  font-size: clamp(65px,16vw,170px);
-  font-weight: 900;
-  color: rgba(255,255,255,.025);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  pointer-events: none;
-}
-
-.eyebrow {
-  color: var(--gold);
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.hero h1 {
-  position: relative;
-  font-size: clamp(42px,9vw,85px);
-  line-height: 1.1;
-  font-weight: 1000;
-  margin: 18px 0;
-  background: linear-gradient(90deg,#fff1b8,#f3b83d,#e87919);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.hero h2 {
-  font-size: clamp(19px,4vw,29px);
-  color: var(--white);
-  margin-bottom: 12px;
-}
-
-.hero p {
-  color: var(--muted);
-  max-width: 570px;
-  margin: auto;
-  font-size: 15px;
-}
-
-.hero-buttons {
-  margin-top: 28px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 13px 22px;
-  border-radius: 9px;
-  font-weight: 900;
-  font-size: 13px;
-  transition: .25s;
-  cursor: pointer;
-  border: none;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.12);
-}
-
-.btn-gold {
-  background: linear-gradient(135deg,#ffdb77,#e99a24);
-  color: #171008;
-}
-
-.btn-outline {
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  background: transparent;
-}
-
-/* PROMOTION */
-
-.promo {
-  margin: 35px auto;
-  text-align: center;
-}
-
-.promo-label {
-  display: inline-block;
-  padding: 7px 15px;
-  background: #25180c;
-  color: var(--gold);
-  border: 1px solid var(--border);
-  border-radius: 30px;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  margin-bottom: 14px;
-}
-
-.promo img {
-  display: block;
-  width: 100%;
-  max-width: 850px;
-  margin: auto;
-  border-radius: 17px;
-  border: 1px solid var(--border);
-  box-shadow: 0 15px 50px #000;
-}
-
-/* GENERAL SECTIONS */
-
-section.content-section {
-  padding: 55px 0;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.section-heading h2 {
-  font-size: clamp(24px,5vw,35px);
-  color: var(--gold);
-  margin-bottom: 5px;
-}
-
-.section-heading p {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* PRODUCTS */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 16px;
-}
-
-.card {
-  position: relative;
-  overflow: hidden;
-  padding: 21px;
-  border-radius: 15px;
-  border: 1px solid var(--border);
-  background: linear-gradient(145deg,#1b1a17,#101010);
-  transition: .3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: var(--gold);
-  box-shadow: 0 10px 30px #0008;
-}
-
-.product-icon {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.product-name {
-  font-size: 18px;
-  font-weight: 900;
-  color: var(--white);
-}
-
-.amount {
-  color: var(--gold);
-  font-weight: 900;
-  font-size: 13px;
-  margin-top: 3px;
-}
-
-.old-price {
-  color: #89857c;
-  font-size: 13px;
-  text-decoration: line-through;
-  margin-top: 12px;
-}
-
-.price {
-  font-size: 29px;
-  font-weight: 1000;
-  color: var(--orange);
-  line-height: 1.3;
-}
-
-.currency {
-  font-size: 13px;
-}
-
-.order-btn {
-  display: block;
-  text-align: center;
-  margin-top: 17px;
-  background: linear-gradient(135deg,#f8d46e,#e89a29);
-  color: #15110a;
-  padding: 11px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 900;
-  transition: .2s;
-}
-
-.order-btn:hover {
-  background: var(--green);
-  color: #fff;
-}
-
-.normal-price {
-  color: var(--muted);
-  font-size: 11px;
-  margin-top: 5px;
-}
-
-/* BENEFITS */
-
-.benefits {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
-  gap: 15px;
-}
-
-.benefit {
-  padding: 20px;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  text-align: center;
-}
-
-.benefit .icon {
-  font-size: 30px;
-  margin-bottom: 8px;
-}
-
-.benefit h3 {
-  color: var(--gold);
-  font-size: 15px;
-  margin-bottom: 5px;
-}
-
-.benefit p {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-/* PAYMENT */
-
-.payment-box {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 15px;
-}
-
-.payment-item {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  padding: 22px;
-  border-radius: 12px;
-}
-
-.payment-item h3 {
-  color: var(--gold);
-  font-size: 16px;
-  margin-bottom: 7px;
-}
-
-.payment-item p {
-  font-size: 14px;
-  color: var(--white);
-}
-
-.payment-item small {
-  color: var(--muted);
-}
-
-.payment-item a {
-  color: var(--green);
-  overflow-wrap: anywhere;
-}
-
-/* NOTICE */
-
-.notice {
-  margin-top: 25px;
-  padding: 16px;
-  border-radius: 10px;
-  background: #21190e;
-  border: 1px solid #654719;
-  color: #f5dca5;
-  font-size: 13px;
-}
-
-/* FOOTER */
-
-footer {
-  background: #101010;
-  border-top: 1px solid var(--border);
-  padding: 35px 15px;
-  text-align: center;
-}
-
-.footer-brand {
-  color: var(--gold);
-  font-size: 23px;
-  font-weight: 1000;
-}
-
-footer p {
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 8px;
-}
-
-/* WHATSAPP FLOATING BUTTON */
-
-.whatsapp {
-  position: fixed;
-  right: 19px;
-  bottom: 20px;
-  z-index: 200;
-  background: var(--green);
-  color: white;
-  padding: 13px 18px;
-  border-radius: 40px;
-  font-weight: 900;
-  font-size: 13px;
-  box-shadow: 0 5px 25px #0009;
-}
-
-/* MOBILE */
-
-@media(max-width:650px) {
-  .nav-content { min-height: 65px; }
-  .brand { font-size: 15px; }
-  .brand img { width: 38px; height: 38px; }
-  .nav-links { gap: 12px; font-size: 11px; }
-  .nav-cta { padding: 8px 10px; }
-  .hero { padding: 65px 12px; }
-  section.content-section { padding: 40px 0; }
-  .grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
-  .card { padding: 13px; }
-  .product-name { font-size: 14px; }
-  .price { font-size: 23px; }
-  .old-price { margin-top: 9px; }
-  .order-btn { padding: 10px 5px; font-size: 11px; }
-}
-
-@media(max-width:370px) {
-  .grid { grid-template-columns: 1fr; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <title>Cheetah Xpress | Free Fire Top-Up</title>
+
+  <style>
+    :root {
+      --black: #080808;
+      --dark: #111;
+      --gold: #ffc400;
+      --orange: #ff6500;
+      --green: #20d94b;
+      --white: #fff;
+      --muted: #b9b9b9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at top, #351000 0%, transparent 45%),
+        linear-gradient(180deg, #080808, #160900 55%, #080808);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ANIMATION HALLOWEEN */
+    body::before {
+      content: "🎃     🦇       🕸️       🦇       🎃";
+      position: fixed;
+      top: 10%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 23px;
+      opacity: .12;
+      pointer-events: none;
+      z-index: -1;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(25px); }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 8px #ff650055;
+      }
+      50% {
+        box-shadow: 0 0 24px #ff6500aa;
+      }
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .65; }
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, .94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #ffc40066;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--gold);
+    }
+
+    .logo img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .top-button {
+      background: var(--gold);
+      color: #000;
+      padding: 12px 17px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 15px;
+    }
+
+    .hero-poster {
+      width: 100%;
+      height: 390px;
+      overflow: hidden;
+      border: 1px solid var(--gold);
+      border-radius: 18px;
+      box-shadow: 0 0 25px #ff650044;
+      animation: glow 4s infinite;
+      background: #120700;
+    }
+
+    .hero-poster img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .hero-text {
+      text-align: center;
+      padding: 22px 10px;
+    }
+
+    .hero-text h1 {
+      color: var(--gold);
+      font-size: clamp(27px, 5vw, 44px);
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px #ff6500;
+    }
+
+    .hero-text p {
+      color: #ddd;
+      line-height: 1.7;
+    }
+
+    .hero-text strong {
+      color: var(--orange);
+    }
+
+    /* BUTTONS */
+    .order-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #b7ff00, #19d94a);
+      color: #071000;
+      font-weight: 900;
+      padding: 12px 20px;
+      border-radius: 25px;
+      text-align: center;
+      transition: .25s;
+      border: none;
+    }
+
+    .order-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 18px #20d94b88;
+    }
+
+    /* FEATURES */
+    .features {
+      max-width: 1150px;
+      margin: 15px auto 35px;
+      padding: 0 15px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .feature {
+      background: #111;
+      border: 1px solid #5a4300;
+      border-radius: 12px;
+      padding: 17px 10px;
+      text-align: center;
+    }
+
+    .feature .symbol {
+      font-size: 25px;
+      color: var(--gold);
+    }
+
+    .feature h3 {
+      color: var(--gold);
+      font-size: 14px;
+      margin: 8px 0 5px;
+    }
+
+    .feature p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* GENERAL SECTIONS */
+    .section {
+      max-width: 1150px;
+      margin: 45px auto;
+      padding: 0 18px;
+    }
+
+    .section-title {
+      color: var(--gold);
+      font-size: clamp(22px, 4vw, 29px);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #ff650044;
+    }
+
+    .section-description {
+      color: #ccc;
+      margin-bottom: 22px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* PRODUCTS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .product-card {
+      background: linear-gradient(145deg, #171717, #080808);
+      border: 1px solid #705500;
+      border-radius: 15px;
+      padding: 20px 15px;
+      text-align: center;
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: " ";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #ff6500;
+      filter: blur(75px);
+      opacity: .13;
+      top: -30px;
+      right: -30px;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+      box-shadow: 0 0 22px #ff650033;
+    }
+
+    .diamond-icon {
+      font-size: 42px;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 10px #008cff);
+    }
+
+    .product-card h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .old-price {
+      color: #888;
+      text-decoration: line-through;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .price {
+      color: var(--gold);
+      font-size: 27px;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+
+    .currency {
+      font-size: 13px;
+      color: #ddd;
+    }
+
+    .product-card .order-btn {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    /* SUBSCRIPTIONS */
+    .subscription-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .subscription {
+      background: #101010;
+      border: 1px solid #a77a00;
+      border-radius: 14px;
+      padding: 22px 15px;
+      text-align: center;
+    }
+
+    .subscription .symbol {
+      font-size: 36px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .subscription h3 {
+      margin-bottom: 8px;
+    }
+
+    .subscription .price {
+      margin: 10px 0;
+    }
+
+    .subscription .order-btn {
+      width: 100%;
+    }
+
+    /* PAYMENT */
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .payment-card {
+      background: #111;
+      border: 1px solid #514000;
+      border-radius: 13px;
+      padding: 20px;
+    }
+
+    .payment-card h3 {
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .payment-card p {
+      color: #ddd;
+      font-size: 14px;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+
+    .warning {
+      border: 1px solid var(--orange);
+      background: #261000;
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 18px;
+      color: #eee;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .warning strong {
+      color: var(--gold);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #8a6500;
+      background: #050505;
+      padding: 28px 15px;
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    footer img {
+      width: 95px;
+      height: 75px;
+      object-fit: contain;
+    }
+
+    footer h3 {
+      color: var(--gold);
+      margin: 8px 0;
+    }
+
+    footer p {
+      color: #aaa;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 18px;
+      z-index: 200;
+      background: #20d94b;
+      color: #001b08;
+      font-weight: 900;
+      padding: 14px 18px;
+      border-radius: 35px;
+      box-shadow: 0 0 20px #20d94b77;
+      animation: float 3s infinite;
+    }
+
+    /* MOBILE */
+    @media (max-width: 750px) {
+      .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .top-button {
+        font-size: 12px;
+      }
+
+      .hero-poster {
+        height: 260px;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .product-card {
+        padding: 15px 9px;
+      }
+
+      .product-card h3 {
+        font-size: 15px;
+      }
+
+      .price {
+        font-size: 23px;
+      }
+
+      .subscription-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-whatsapp {
+        padding: 12px 14px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<nav>
-  <div class="container nav-content">
-    <a class="brand" href="#">
+<header>
+  <div class="navbar">
+    <a href="#akèy" class="logo">
       <img src="cheetah-xpress-logo.png" alt="Cheetah Xpress Logo">
-      CHEETAH XPRESS
+      <span>CHEETAH XPRESS</span>
     </a>
 
-    <div class="nav-links">
-      <a href="#prices">Pri yo</a>
-      <a href="#payment">Peman</a>
-      <a class="nav-cta" href="#prices">Achte</a>
-    </div>
-  </div>
-</nav>
+    <nav>
+      <a href="#akèy">Akèy</a>
+      <a href="#diamonds">Diamonds</a>
+      <a href="#abonnman">Abònman</a>
+      <a href="#pem an">Peman</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="container">
-    <div class="eyebrow">🐆 YOUR PREMIUM GAMING STORE</div>
-
-    <h1>CHEETAH XPRESS</h1>
-
-    <h2>Vitès. Pouvwa. Pèfòmans.</h2>
-
-    <p>
-      Plis Diamonds, plis eksperyans!
-      Jwenn Diamonds Free Fire ou yo,
-      Abònman ak Booyah Pass fasil.
-      Chwazi pake ou epi pase kòmand ou sou WhatsApp.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="#prices" class="btn btn-gold">💎 ACHTE DIAMONDS</a>
-      <a href="#payment" class="btn btn-outline">METÒD PEMAN</a>
-    </div>
+    <a class="top-button" href="https://wa.me/50935514145">
+      WhatsApp ↗
+    </a>
   </div>
 </header>
 
-<main class="container">
+<main id="akèy">
 
-<!-- HALLOWEEN PROMO -->
-<section class="promo">
-  <div class="promo-label">🎃 SPECIAL HALLOWEEN OFFER</div>
-  <img src="halloween-promo.png"
-       alt="Cheetah Xpress Halloween Promotion">
-</section>
-
-<!-- DIAMONDS -->
-<section class="content-section" id="prices">
-
-  <div class="section-heading">
-    <div class="eyebrow">PREPARE POU BATAY LA</div>
-    <h2>💎 Diamonds Free Fire</h2>
-    <p>Chwazi pake ou vle a epi kòmande dirèkteman sou WhatsApp.</p>
-  </div>
-
-  <div class="grid">
-
-    <article class="card">
-      <div class="product-icon">💎</div>
-      <div class="product-name">Starter Pack</div>
-      <div class="amount">110 Diamonds</div>
-      <div class="old-price">150 G</div>
-      <div class="price">135 <span class="currency">G</span></div>
-      <a class="order-btn" href="#" data-product="110 Diamonds" data-price="135">KÒMANDE →</a>
-    </article>
-
-    <article class="card">
-      <div class="product-icon">💎</div>
-      <div class="product-name">Popular Pack</div>
-      <div class="amount">341 Diamonds</div>
-      <div class="old-price">440 G</div>
-      <div class="price">387 <span class="currency">G</span></div>
-      <a class="order-btn" href="#" data-product="341 Diamonds" data-price="387">KÒMANDE →</a>
-    </article>
-
-    <article class="card">
-      <div class="product-icon">💎</div>
-      <div class="product-name">Pro Pack</div>
-      <div class="amount">572 Diamonds</div>
-      <div class="old-price">730 G</div>
-      <div class="price">642 <span class="currency">G</span></div>
-      <a class="order-btn" href="#" data-product="572 Diamonds" data-price="642">KÒMANDE →</a>
-    </article>
-
-    <article class="card">
-      <div class="product-icon">💎</div>
-      <div class="product-name">Elite Pack</div>
-      <div class="amount">1,166 Diamonds</div>
-      <div class="old-price">1,450 G</div>
-      <div class="price">1,262 <span class="currency">G</span></div>
-      <a class="order-btn" href="#" data-product="1166 Diamonds" data-price="1262">KÒMANDE →</a>
-    </article>
-
-    <article class="card">
-      <div class="product-icon">💎</div>
-      <div class="product-name">Premium Pack</div>
-      <div class="amount">2,398 Diamonds</div>
-      <div class="old-price">2,800 G</div>
-      <div class="price">2,408 <span class="currency">G</span></div>
-      <a class="order-btn" href="#" data-product="2398 Diamonds" data-price="2408">KÒMANDE →</a>
-    </article>
-
-    <article class="card">
-      <div class="product-icon">👑</div>
-      <div class="product-name">Ultimate Pack</div>
-      <div class="amount">6,160 Diamonds</div>
-      <div class="old-price">6,500 G</div>
-      <div class="price">5,900 <span class="currency">G</span></div>
-      <a class="order-btn" href="#" data-product="6160 Diamonds" data-price="5900">KÒMANDE →</a>
-    </article>
-
-  </div>
-</section>
-
-<!-- MEMBERSHIPS -->
-<section class="content-section">
-
-  <div class="section-heading">
-    <div class="eyebrow">EXCLUSIVE OFFERS</div>
-    <h2>🎟️ Abònman & Booyah Pass</h2>
-    <p>Pran avantaj sèvis espesyal yo.</p>
-  </div>
-
-  <div class="grid">
-
-    <article class="card">
-      <div class="product-icon">🎟️</div>
-      <div class="product-name">Abònman Semèn</div>
-      <div class="amount">7 Jou</div>
-      <div class="price">370 <span class="currency">G</span></div>
-      <div class="normal-price">Pri nòmal</div>
-      <a class="order-btn" href="#" data-product="Abònman 1 semèn" data-price="370">KÒMANDE →</a>
-    </article>
-
-    <article class="card">
-      <div class="product-icon">👑</div>
-      <div class="product-name">Abònman Mwa</div>
-      <div class="amount">30 Jou</div>
-      <div class="price">1,850 <span class="currency">G</span></div>
-      <div class="normal-price">Pri nòmal</div>
-      <a class="order-btn" href="#" data-product="Abònman 1 mwa" data-price="1850">KÒMANDE →</a>
-    </article>
-
-    <article class="card">
-      <div class="product-icon">🔥</div>
-      <div class="product-name">Booyah Pass</div>
-      <div class="amount">Exclusive Pass</div>
-      <div class="price">640 <span class="currency">G</span></div>
-      <div class="normal-price">Pri nòmal</div>
-      <a class="order-btn" href="#" data-product="Booyah Pass" data-price="640">KÒMANDE →</a>
-    </article>
-
-  </div>
-</section>
-
-<!-- BENEFITS -->
-<section class="content-section">
-
-  <div class="section-heading">
-    <h2>Poukisa Cheetah Xpress?</h2>
-    <p>Eksperyans kliyan an se priyorite nou.</p>
-  </div>
-
-  <div class="benefits">
-
-    <div class="benefit">
-      <div class="icon">⚡</div>
-      <h3>Kòmand fasil</h3>
-      <p>Pase kòmand ou dirèkteman sou WhatsApp.</p>
+  <!-- HALLOWEEN POSTER -->
+  <section class="hero">
+    <div class="hero-poster">
+      <img src="halloween-banner.png"
+           alt="Cheetah Xpress Halloween Special">
     </div>
 
-    <div class="benefit">
-      <div class="icon">💎</div>
-      <h3>Plizyè opsyon</h3>
-      <p>Chwazi pake Diamonds ki adapte ak bidjè ou.</p>
-    </div>
-
-    <div class="benefit">
-      <div class="icon">🤝</div>
-      <h3>Sèvis kliyan</h3>
-      <p>Kontakte nou pou asistans sou kòmand ou.</p>
-    </div>
-
-    <div class="benefit">
-      <div class="icon">📱</div>
-      <h3>Aksesib</h3>
-      <p>Fè kòmand ou depi telefòn oswa òdinatè.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- PAYMENT -->
-<section class="content-section" id="payment">
-
-  <div class="section-heading">
-    <div class="eyebrow">SECURE PAYMENT</div>
-    <h2>💳 Metòd Peman</h2>
-    <p>Men opsyon peman ou ka itilize pou kòmand ou.</p>
-  </div>
-
-  <div class="payment-box">
-
-    <div class="payment-item">
-      <h3>🟢 NatCash</h3>
-      <p>+509 3551-4145</p>
-      <small>Non: John Rubens</small>
-    </div>
-
-    <div class="payment-item">
-      <h3>🔵 MonCash</h3>
-      <p>+509 4490-3997</p>
-      <small>Pou peman ak MonCash.</small>
-    </div>
-
-    <div class="payment-item">
-      <h3>📧 Imèl Biznis</h3>
+    <div class="hero-text">
+      <h1>🎃 SPESYAL HALLOWEEN 🎃</h1>
       <p>
-        <a href="mailto:johnstorebusiness01@gmail.com">
-          johnstorebusiness01@gmail.com
-        </a>
+        Byenveni nan <strong>Cheetah Xpress</strong>!
+        Jwenn Diamonds, Abònman ak Booyah Pass ou fasil.
+        <br>
+        Chwazi pake ou epi pase kòmand ou sou WhatsApp.
       </p>
-      <small>Kontakte nou pou enfòmasyon.</small>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="features">
+    <div class="feature">
+      <div class="symbol">⚡</div>
+      <h3>Kòmand rapid</h3>
+      <p>Dirèk sou WhatsApp.</p>
     </div>
 
-  </div>
+    <div class="feature">
+      <div class="symbol">💎</div>
+      <h3>Plizyè opsyon</h3>
+      <p>Pake pou tout bidjè.</p>
+    </div>
 
-  <div class="notice">
-    ⚠️ <strong>Enpòtan:</strong>
-    Kontakte sèvis kliyan nou an pou konfime kòmand ou ak detay peman yo.
-    Pa pataje modpas kont jwèt ou.
-  </div>
+    <div class="feature">
+      <div class="symbol">🎧</div>
+      <h3>Sèvis kliyan</h3>
+      <p>Nou la pou ede w.</p>
+    </div>
 
-</section>
+    <div class="feature">
+      <div class="symbol">📱</div>
+      <h3>Aksesib</h3>
+      <p>Depi telefòn ou.</p>
+    </div>
+  </section>
+
+  <!-- DIAMONDS -->
+  <section class="section" id="diamonds">
+    <h2 class="section-title">💎 Diamonds Free Fire</h2>
+    <p class="section-description">
+      Chwazi kantite Diamonds ou bezwen epi klike sou Kòmande.
+    </p>
+
+    <div class="products">
+
+      <div class="product-card">
+        <div class="diamond-icon">💎</div>
+        <h3>100 + 10 Diamonds</h3>
+        <p class="price">158 <span class="currency">HTG</span></p>
+        <a class="order-btn" href="https://wa.me/50935514145?text=Bonjou%20Cheetah%20Xpress%2C%20mwen%20vle%20100%2B10%20Diamonds%20pou%20158%20HTG.">
+          Kòmande
+        </a>
+      </div>
+
+      <div class="product-card">
+        <div class="diamond-icon">💎</div>
+        <h3>310 + 31 Diamonds</h3>
+        <p class="price">473 <span class="currency">HTG</span></p>
+        <a class="order-btn" href="https://wa.me/50935514145?text=Bonjou%2C%20mwen%20vle%20310%2B31%20Diamonds%20pou%20473%20HTG.">
+          Kòmande
+        </a>
+      </div>
+
+      <div class="product-card">
+        <div class="diamond-icon">💎</div>
+        <h3>520 + 52 Diamonds</h3>
+        <p class="price">788 <span class="currency">HTG</span></p>
+        <a class="order-btn" href="https://wa.me/50935514145?text=Bonjou%2C%20mwen%20vle%20520%2B52%20Diamonds%20pou%20788%20HTG.">
+          Kòmande
+        </a>
+      </div>
+
+      <div class="product-card">
+        <div class="diamond-icon">💎</div>
+        <h3>1,060 + 106 Diamonds</h3>
+        <p class="price">1,628 <span class="currency">HTG</span></p>
+        <a class="order-btn" href="https://wa.me/50935514145?text=Bonjou%2C%20mwen%20vle%201060%2B106%20Diamonds%20pou%201628%20HTG.">
+          Kòmande
+        </a>
+      </div>
+
+      <div class="product-card">
+        <div class="diamond-icon">💎</div>
+        <h3>2,180 + 218 Diamonds</h3>
+        <p class="price">3,150 <span class="currency">HTG</span></p>
+        <a class="order-btn" href="https://wa.me/50935514145?text=Bonjou%2C%20mwen%20vle%202180%2B218%20Diamonds%20pou%203150%20HTG.">
+          Kòmande
+        </a>
+      </div>
+
+      <div class="product-card">
+        <div class="diamond-icon">💎</div>
+        <h3>5,600 + 560 Diamonds</h3>
+        <p class="price">7,350 <span class="currency">HTG</span></p>
+        <a class="order-btn" href="https://wa.me/50935514145?text=Bonjou%2C%20mwen%20vle%205600%2B560%20Diamonds%20pou%207350%20HTG.">
+          Kòmande
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SUBSCRIPTIONS -->
+  <section class="section" id="abonnman">
+    <h2 class="section-title">👑 Abònman & Booyah Pass</h2>
+    <p class="section-description">
+      Pran avantaj sèvis espesyal nou yo.
+    </p>
+
+    <div class="subscription-grid">
+
+      <div class="subscription">
+        <div class="symbol">📅</div>
+        <h3>Abònman Semèn</h3>
+        <p>7 jou</p>
+        <p class="price">368 HTG</p>
+        <a class="order-btn" href="https://wa.me/50935514145?text=Bonjou%2C%20mwen%20vle%20Ab%C3%B2nman%20Sem%C3%A8n%20pou%20368%20HTG.">
+          Kòmande
+        </a>
+      </div>
+
+      <div class="subscription">
+        <div class="symbol">👑</div>
+        <h3>Abònman Mwa</h3>
+        <p>30 jou</p>
+        <p class="price">1,838 HTG</p>
+        <a class="order-btn" href="https://wa.me/50935514145?text=Bonjou%2C%20mwen%20vle%20Ab%C3%B2nman%20Mwa%20pou%201838%20HTG.">
+          Kòmande
+        </a>
+      </div>
+
+      <div class="subscription">
+        <div class="symbol">🎟️</div>
+        <h3>Booyah Pass</h3>
+        <p>Exclusive Pass</p>
+        <p class="price">630 HTG</p>
+        <a class="order-btn" href="https://wa.me/50935514145?text=Bonjou%2C%20mwen%20vle%20Booyah%20Pass%20pou%20630%20HTG.">
+          Kòmande
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PAYMENT -->
+  <section class="section" id="pem an">
+    <h2 class="section-title">💳 Metòd Peman</h2>
+    <p class="section-description">
+      Peman rapid, fasil ak san pwoblèm.
+    </p>
+
+    <div class="payment-grid">
+
+      <div class="payment-card">
+        <h3>🟢 NatCash</h3>
+        <p>+509 3551-4145</p>
+        <p>Non: John Rubens</p>
+      </div>
+
+      <div class="payment-card">
+        <h3>🔵 MonCash</h3>
+        <p>+509 4490-3997</p>
+        <p>Pou peman ak MonCash.</p>
+      </div>
+
+      <div class="payment-card">
+        <h3>📧 Imèl Biznis</h3>
+        <p>johnstorebusiness01@gmail.com</p>
+        <p>Kontakte nou pou plis enfòmasyon.</p>
+      </div>
+
+    </div>
+
+    <div class="warning">
+      <strong>⚠️ ENPÒTAN</strong>
+      <p>
+        Kontakte sèvis kliyan nou an pou konfime kòmand ou
+        ak detay peman yo. Pa pataje modpas kont jwèt ou.
+      </p>
+    </div>
+  </section>
 
 </main>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-brand">🐆 CHEETAH XPRESS</div>
-  <p>Vitès. Pouvwa. Pèfòmans.</p>
-  <p>© 2026 Cheetah Xpress. Tout dwa rezève.</p>
+<footer id="kontak">
+  <img src="cheetah-xpress-logo.png" alt="Cheetah Xpress">
+  <h3>Vitès. Pouvwa. Pèfòmans.</h3>
   <p>Made for gamers. Built for excellence. 💎</p>
+  <p>© 2026 Cheetah Xpress. Tout dwa rezève.</p>
+  <p>Kontak WhatsApp: +509 3551-4145</p>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a class="whatsapp"
-   href="https://wa.me/50935514145"
-   target="_blank"
-   rel="noopener noreferrer">
-   WhatsApp 💬
+<a class="floating-whatsapp"
+   href="https://wa.me/50935514145?text=Bonjou%20Cheetah%20Xpress%2C%20mwen%20ta%20renmen%20plis%20enf%C3%B2masyon.">
+  ☎ WhatsApp
 </a>
-
-<script>
-const WHATSAPP_NUMBER = "50935514145";
-
-document.querySelectorAll(".order-btn").forEach(button => {
-
-  button.addEventListener("click", function(event) {
-    event.preventDefault();
-
-    const product = this.dataset.product;
-    const price = this.dataset.price;
-
-    const message =
-      `Bonjou Cheetah Xpress! 🐆\n\n` +
-      `Mwen vle kòmande:\n` +
-      `📦 Pwodwi: ${product}\n` +
-      `💰 Pri: ${price} G\n\n` +
-      `Tanpri ede m finalize kòmand mwen.`;
-
-    const url =
-      `https://wa.me/${WHATSAPP_NUMBER}?text=` +
-      encodeURIComponent(message);
-
-    window.open(url, "_blank");
-  });
-
-});
-</script>
 
 </body>
   </html>
