@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a1030">
+  <title>CheetahXpress – Rechaj Free Fire</title>
+  <style>
+    :root {
+      --bg: #0a1030;
+      --glass: rgba(255, 255, 255, 0.06);
+      --glass-2: rgba(255, 255, 255, 0.11);
+      --line: rgba(255, 255, 255, 0.13);
+      --text: #f4f6fb;
+      --muted: #a9b2cc;
+      --gold: #ffc94a;
+      --gold-ink: #231400;
+      --grad-gold: linear-gradient(135deg, #ffe07a 0%, #ffb23e 55%, #ff8a3d 100%);
+      --grad-brand: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+      --green: #25d366;
+      --danger: #ff8080;
+      --radius: 16px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+      padding-bottom: calc(116px + env(safe-area-inset-bottom, 0px));
+    }
+
+    /* Mixed gradient background (fixed layer, smooth on phones) */
+    body::before {
+      content: "";
+      position: fixed; inset: 0; z-index: -1;
+      background:
+        radial-gradient(520px 420px at 0% 0%, rgba(139, 92, 246, 0.45), transparent 62%),
+        radial-gradient(480px 420px at 100% 28%, rgba(236, 72, 153, 0.28), transparent 62%),
+        radial-gradient(520px 480px at 0% 78%, rgba(59, 130, 246, 0.30), transparent 62%),
+        radial-gradient(460px 420px at 100% 100%, rgba(255, 160, 50, 0.24), transparent 62%),
+        var(--bg);
+    }
+
+    .wrap { max-width: 480px; margin: 0 auto; padding: 0 16px; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    /* ===== Banner (afich) ===== */
+    .banner {
+      position: relative;
+      max-width: 480px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 0 0 28px 28px;
+      background: var(--grad-brand);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    }
+    .banner-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .banner::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(180deg, rgba(10, 16, 48, 0) 55%, rgba(10, 16, 48, 0.55) 100%);
+    }
+    /* Fallback when banner.png is missing */
+    .banner-art {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 0 24px 22px;
+      background:
+        radial-gradient(260px 200px at 85% 20%, rgba(255, 201, 74, 0.55), transparent 65%),
+        radial-gradient(300px 220px at 10% 90%, rgba(59, 130, 246, 0.6), transparent 65%),
+        linear-gradient(135deg, #5b21b6 0%, #be185d 60%, #ea580c 100%);
+    }
+    .banner-art .k { font-size: 13px; font-weight: 600; opacity: 0.9; }
+    .banner-art .t { font-size: 30px; font-weight: 800; line-height: 1.1; margin-top: 4px; }
+    .banner-art .s { font-size: 13px; margin-top: 8px; opacity: 0.92; }
+
+    /* ===== Logo + name ===== */
+    .brand { text-align: center; margin-top: -52px; position: relative; z-index: 2; }
+    .logo-badge {
+      width: 104px; height: 104px;
+      margin: 0 auto;
+      border-radius: 30px;
+      padding: 3px;
+      background: var(--grad-gold);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(10, 16, 48, 0.6);
+    }
+    .logo-inner {
+      width: 100%; height: 100%;
+      border-radius: 27px;
+      background: #0d1538;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      font-size: 46px;
+    }
+    .logo-inner img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+    .brand h1 { margin-top: 12px; font-size: 26px; font-weight: 800; letter-spacing: 0.2px; }
+    .brand h1 span {
+      background: var(--grad-gold);
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent; -webkit-text-fill-color: transparent;
+    }
+    .tagline { margin-top: 4px; font-size: 14px; color: var(--muted); }
+
+    /* ===== Facts ===== */
+    .facts {
+      display: flex; gap: 8px;
+      margin-top: 20px;
+      padding: 12px 8px;
+      background: var(--glass);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      font-size: 12px; color: var(--muted); text-align: center;
+    }
+    .facts div { flex: 1; }
+    .facts b { display: block; color: var(--text); font-size: 13px; font-weight: 600; }
+
+    /* ===== Sections ===== */
+    section { padding-top: 28px; }
+    h2 { font-size: 17px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+    h2 .n {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--grad-gold); color: var(--gold-ink);
+      font-size: 13px; font-weight: 800;
+      display: inline-flex; align-items: center; justify-content: center; flex: none;
+    }
+    .hint { margin: 4px 0 0 36px; font-size: 13px; color: var(--muted); }
+    h3 { margin: 18px 0 8px; font-size: 13px; font-weight: 600; color: var(--muted); }
+
+    /* ===== Packs ===== */
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .grid.one { grid-template-columns: 1fr; }
+
+    .pack {
+      position: relative;
+      font: inherit; color: inherit; text-align: left;
+      background: var(--glass);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      cursor: pointer;
+      display: flex; flex-direction: column; gap: 2px;
+      min-height: 88px;
+      transition: border-color .15s, background .15s, transform .1s;
+    }
+    .pack:active { transform: scale(0.98); }
+    .pack .amount { font-size: 20px; font-weight: 700; line-height: 1.15; }
+    .pack .unit { font-size: 12px; color: var(--muted); }
+    .pack .price {
+      margin-top: auto; padding-top: 8px; font-size: 15px; font-weight: 700;
+      background: var(--grad-gold);
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent; -webkit-text-fill-color: transparent;
+    }
+    .pack[aria-pressed="true"] {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.35), rgba(236, 72, 153, 0.22));
+      box-shadow: 0 0 0 1px var(--gold), 0 8px 22px rgba(139, 92, 246, 0.3);
+    }
+    .pack[aria-pressed="true"]::after {
+      content: "✓";
+      position: absolute; top: 10px; right: 10px;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--grad-gold); color: var(--gold-ink);
+      font-size: 12px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .badge {
+      align-self: flex-start; margin-bottom: 4px;
+      font-size: 11px; font-weight: 700;
+      background: var(--grad-gold); color: var(--gold-ink);
+      padding: 2px 9px; border-radius: 99px;
+    }
+
+    /* ===== ID input ===== */
+    .field {
+      margin-top: 12px;
+      background: var(--glass);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 4px 16px;
+      transition: border-color .15s;
+    }
+    .field:focus-within { border-color: var(--gold); }
+    .field.invalid { border-color: var(--danger); }
+    .field input {
+      width: 100%; background: transparent; border: 0; outline: 0;
+      color: var(--text); font-size: 17px; padding: 13px 0; letter-spacing: 0.5px;
+    }
+    .field input::placeholder { color: #7480a0; letter-spacing: 0; }
+    .error { display: none; margin: 6px 2px 0; font-size: 12.5px; color: var(--danger); }
+    .field.invalid + .error { display: block; }
+
+    /* ===== Payment ===== */
+    .pay { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+    .pay-opt {
+      font: inherit; color: inherit; text-align: left;
+      background: var(--glass);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+    }
+    .pay-opt[aria-pressed="true"] {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.30), rgba(139, 92, 246, 0.28));
+      box-shadow: 0 0 0 1px var(--gold);
+    }
+    .pay-opt .name { font-weight: 700; font-size: 16px; }
+    .pay-opt .num { display: block; margin-top: 4px; font-size: 14px; color: var(--text); font-weight: 600; }
+    .pay-opt .holder { display: block; margin-top: 2px; font-size: 12.5px; color: var(--muted); }
+    .pay-opt .holder b { color: var(--gold); font-weight: 700; }
+    .copy {
+      display: inline-block; margin-top: 10px;
+      font-size: 12.5px; font-weight: 600; color: var(--gold);
+      border: 1px solid var(--line); border-radius: 8px;
+      padding: 4px 10px; cursor: pointer;
+      background: rgba(0, 0, 0, 0.18);
+    }
+    .note {
+      margin-top: 12px; font-size: 13px; color: var(--muted);
+      padding: 12px 14px;
+      border-left: 3px solid var(--gold);
+      background: var(--glass);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .note b { color: var(--text); }
+
+    /* ===== Contact ===== */
+    .contact { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+    .contact a { color: var(--gold); text-decoration: none; }
+    .contact p + p { margin-top: 4px; }
+    .contact strong { color: var(--text); }
+    footer { margin: 22px 0 8px; text-align: center; font-size: 12px; color: #7480a0; }
+
+    /* ===== Order bar ===== */
+    .bar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+      background: rgba(10, 16, 48, 0.88);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid var(--line);
+      padding: 12px 0 calc(12px + env(safe-area-inset-bottom, 0px));
+    }
+    .bar .wrap { display: flex; align-items: center; gap: 12px; }
+    .summary { flex: 1; min-width: 0; }
+    .summary .s1 { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .summary .s2 { font-size: 17px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .order {
+      flex: none;
+      font: inherit; font-size: 15px; font-weight: 700;
+      background: linear-gradient(135deg, #2bde73, #12b886);
+      color: #03200f;
+      border: 0; border-radius: 12px;
+      padding: 13px 18px; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+    }
+    .order:disabled { background: var(--glass-2); color: #7480a0; box-shadow: none; cursor: not-allowed; }
+
+    @media (max-width: 360px) {
+      .pack .amount { font-size: 18px; }
+      .order { padding: 12px 14px; font-size: 14px; }
+      .banner-art .t { font-size: 25px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BANNIÈ / AFICH — mete banner.png nan menm katye ak index.html (rekòmande 1280×720) -->
+  <div class="banner">
+    <div class="banner-art" id="bannerArt">
+      <span class="k">CheetahXpress</span>
+      <span class="t">Rechaj Free Fire<br>rapid ak fyab</span>
+      <span class="s">Dyaman • Abònman • Booyah Pass</span>
+    </div>
+    <img src="banner.png" alt="Afich CheetahXpress" class="banner-img" id="bannerImg">
+  </div>
+
+  <!-- LOGO + NON -->
+  <div class="brand">
+    <!-- Mete logo.png nan menm katye ak index.html -->
+    <div class="logo-badge">
+      <div class="logo-inner" id="logoBox">
+        <img src="logo.png" alt="Logo CheetahXpress" id="logoImg">
+      </div>
+    </div>
+    <h1>Cheetah<span>Xpress</span></h1>
+    <p class="tagline">Rechaj Free Fire rapid ak sèvis ki fyab</p>
+  </div>
+
+  <main class="wrap">
+
+    <div class="facts" role="list">
+      <div role="listitem"><b>Livrezon rapid</b>apre peman an</div>
+      <div role="listitem"><b>NatCash &amp; MonCash</b>aksepte</div>
+      <div role="listitem"><b>Sipò WhatsApp</b>chak jou</div>
+    </div>
+
+    <!-- 1. Pack -->
+    <section aria-labelledby="t1">
+      <h2 id="t1"><span class="n">1</span>Chwazi pack ou</h2>
+
+      <h3>Dyaman</h3>
+      <div class="grid">
+        <button class="pack" type="button" aria-pressed="false" data-name="110 Dyaman" data-price="135">
+          <span class="amount">110</span><span class="unit">Dyaman</span><span class="price">135 HTG</span>
+        </button>
+        <button class="pack" type="button" aria-pressed="false" data-name="341 Dyaman" data-price="387">
+          <span class="amount">341</span><span class="unit">Dyaman</span><span class="price">387 HTG</span>
+        </button>
+        <button class="pack" type="button" aria-pressed="false" data-name="572 Dyaman" data-price="642">
+          <span class="amount">572</span><span class="unit">Dyaman</span><span class="price">642 HTG</span>
+        </button>
+        <button class="pack" type="button" aria-pressed="false" data-name="1 166 Dyaman" data-price="1262">
+          <span class="amount">1 166</span><span class="unit">Dyaman</span><span class="price">1 262 HTG</span>
+        </button>
+        <button class="pack" type="button" aria-pressed="false" data-name="2 398 Dyaman" data-price="2408">
+          <span class="amount">2 398</span><span class="unit">Dyaman</span><span class="price">2 408 HTG</span>
+        </button>
+        <button class="pack" type="button" aria-pressed="false" data-name="6 160 Dyaman" data-price="5900">
+          <span class="badge">Pi bon pri</span>
+          <span class="amount">6 160</span><span class="unit">Dyaman</span><span class="price">5 900 HTG</span>
+        </button>
+      </div>
+
+      <h3>Abònman</h3>
+      <div class="grid">
+        <button class="pack" type="button" aria-pressed="false" data-name="Abònman semèn" data-price="370">
+          <span class="amount">Semèn</span><span class="unit">Abònman</span><span class="price">370 HTG</span>
+        </button>
+        <button class="pack" type="button" aria-pressed="false" data-name="Abònman mwa" data-price="1850">
+          <span class="amount">Mwa</span><span class="unit">Abònman</span><span class="price">1 850 HTG</span>
+        </button>
+      </div>
+
+      <h3>Pass</h3>
+      <div class="grid one">
+        <button class="pack" type="button" aria-pressed="false" data-name="Booyah Pass" data-price="640">
+          <span class="amount">Booyah Pass</span><span class="unit">Free Fire</span><span class="price">640 HTG</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. ID -->
+    <section aria-labelledby="t2">
+      <h2 id="t2"><span class="n">2</span>ID Free Fire ou</h2>
+      <p class="hint">Ou jwenn li nan pwofil jwèt la.</p>
+      <div class="field" id="idField">
+        <input id="playerId" type="text" inputmode="numeric" autocomplete="off" maxlength="14"
+               placeholder="Antre ID jwèt ou (chif sèlman)" aria-label="ID Free Fire">
+      </div>
+      <p class="error" id="idError">Antre yon ID valid (omwen 6 chif).</p>
+    </section>
+
+    <!-- 3. Peman -->
+    <section aria-labelledby="t3">
+      <h2 id="t3"><span class="n">3</span>Chwazi mwayen peman</h2>
+      <div class="pay">
+        <button class="pay-opt" type="button" aria-pressed="true" data-method="NatCash">
+          <span class="name">NatCash</span>
+          <span class="num">+509 3551-4145</span>
+          <span class="holder">Non: <b>John Rubens</b></span>
+          <span class="copy" role="button" tabindex="0" data-copy="35514145">Kopye nimewo</span>
+        </button>
+        <button class="pay-opt" type="button" aria-pressed="false" data-method="MonCash">
+          <span class="name">MonCash</span>
+          <span class="num">+509 4490-3997</span>
+          <span class="holder">Non: <b>John Rubens</b></span>
+          <span class="copy" role="button" tabindex="0" data-copy="44903997">Kopye nimewo</span>
+        </button>
+      </div>
+      <p class="note">Voye lajan an sou kont <b>John Rubens</b>, epi voye prèv peman an ak ID ou sou WhatsApp. Nou livre dyaman yo apre nou verifye peman an.</p>
+    </section>
+
+    <div class="contact">
+      <p><strong>Kontakt</strong></p>
+      <p>WhatsApp: <a href="https://wa.me/50935514145">+509 3551-4145</a></p>
+      <p>Email: <a href="mailto:johnstorebusiness01@gmail.com">johnstorebusiness01@gmail.com</a></p>
+    </div>
+
+    <footer>© CheetahXpress 🐆</footer>
+  </main>
+
+  <!-- Order bar -->
+  <div class="bar">
+    <div class="wrap">
+      <div class="summary">
+        <div class="s1" id="s1">Pa gen pack chwazi</div>
+        <div class="s2" id="s2">—</div>
+      </div>
+      <button class="order" id="orderBtn" type="button" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+        <span>Kòmande</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var WA_NUMBER = "50935514145";
+      var HOLDER = "John Rubens";
+      var selected = null;
+      var method = "NatCash";
+
+      var packs = document.querySelectorAll(".pack");
+      var payOpts = document.querySelectorAll(".pay-opt");
+      var idInput = document.getElementById("playerId");
+      var idField = document.getElementById("idField");
+      var orderBtn = document.getElementById("orderBtn");
+      var s1 = document.getElementById("s1");
+      var s2 = document.getElementById("s2");
+
+      // Banner fallback: if banner.png is missing, the gradient art stays visible
+      var bannerImg = document.getElementById("bannerImg");
+      bannerImg.addEventListener("error", function () { bannerImg.style.display = "none"; });
+
+      // Logo fallback: if logo.png is missing, show an emoji
+      var logoImg = document.getElementById("logoImg");
+      logoImg.addEventListener("error", function () {
+        logoImg.style.display = "none";
+        document.getElementById("logoBox").textContent = "🐆";
+      });
+
+      function fmt(n) {
+        return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " HTG";
+      }
+      function validId() {
+        return idInput.value.replace(/\D/g, "").length >= 6;
+      }
+      function refresh() {
+        if (selected) {
+          s1.textContent = selected.name;
+          s2.textContent = fmt(selected.price);
+        } else {
+          s1.textContent = "Pa gen pack chwazi";
+          s2.textContent = "—";
+        }
+        orderBtn.disabled = !(selected && validId());
+      }
+
+      packs.forEach(function (p) {
+        p.addEventListener("click", function () {
+          packs.forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+          p.setAttribute("aria-pressed", "true");
+          selected = { name: p.dataset.name, price: Number(p.dataset.price) };
+          refresh();
+        });
+      });
+
+      payOpts.forEach(function (o) {
+        o.addEventListener("click", function () {
+          payOpts.forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+          o.setAttribute("aria-pressed", "true");
+          method = o.dataset.method;
+        });
+      });
+
+      idInput.addEventListener("input", function () {
+        idInput.value = idInput.value.replace(/\D/g, "");
+        if (validId()) idField.classList.remove("invalid");
+        refresh();
+      });
+      idInput.addEventListener("blur", function () {
+        if (idInput.value && !validId()) idField.classList.add("invalid");
+      });
+
+      function copyNumber(el, ev) {
+        ev.stopPropagation();
+        var done = function () {
+          var old = el.textContent;
+          el.textContent = "Kopye ✓";
+          setTimeout(function () { el.textContent = old; }, 1500);
+        };
+        try { navigator.clipboard.writeText(el.dataset.copy).then(done, done); } catch (e) { done(); }
+      }
+      document.querySelectorAll(".copy").forEach(function (c) {
+        c.addEventListener("click", function (e) { copyNumber(c, e); });
+        c.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); copyNumber(c, e); }
+        });
+      });
+
+      orderBtn.addEventListener("click", function () {
+        if (!selected) return;
+        if (!validId()) { idField.classList.add("invalid"); idInput.focus(); return; }
+        var msg =
+          "Bonjou CheetahXpress, mwen vle fè yon kòmand.\n\n" +
+          "Pack: " + selected.name + "\n" +
+          "Pri: " + fmt(selected.price) + "\n" +
+          "ID Free Fire: " + idInput.value + "\n" +
+          "Peman: " + method + " (" + HOLDER + ")\n\n" +
+          "M ap voye prèv peman an.";
+        window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
+      });
+
+      refresh();
+    })();
+  </script>
+</body>
+</html>
