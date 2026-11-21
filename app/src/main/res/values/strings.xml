@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CheetahXpress</string>
+
+    <!-- Brand & Header -->
+    <string name="brand_prefix">Cheetah</string>
+    <string name="brand_suffix">Xpress</string>
+    <string name="tagline">Rechaj jwèt rapid ak sèvis ki fyab</string>
+    <string name="cd_banner">Afich CheetahXpress</string>
+    <string name="cd_logo">Logo CheetahXpress</string>
+
+    <!-- Facts Strip -->
+    <string name="fact_delivery_title">Livrezon rapid</string>
+    <string name="fact_delivery_sub">apre peman an</string>
+    <string name="fact_payment_title">NatCash &amp; MonCash</string>
+    <string name="fact_payment_sub">aksepte</string>
+    <string name="fact_support_title">Sipò WhatsApp</string>
+    <string name="fact_support_sub">chak jou</string>
+
+    <!-- Step 1: Game & Pack -->
+    <string name="step_one_title">Chwazi jwèt ak pack ou</string>
+    <string name="game_soon_suffix">· byento</string>
+    <string name="promo_note_prefix">Pwomo Desanm: -%1$d%%</string>
+    <string name="promo_note_body"> sou rechaj yo, jiska 30 Desanm. Abònman ak pass pa nan pwomo a.</string>
+    <string name="coming_soon_prefix">Byento disponib.</string>
+    <string name="coming_soon_body"> Jwèt sa a pa disponib sou sit la kounye a. Kontakte nou sou </string>
+    <string name="coming_soon_whatsapp">WhatsApp</string>
+    <string name="coming_soon_tail"> pou yon kòmand espesyal.</string>
+
+    <!-- Step 2: Player ID -->
+    <string name="step_two_title_format">ID %1$s ou</string>
+    <string name="id_hint_single">Ou jwenn li nan pwofil jwèt la.</string>
+    <string name="id_hint_dual">Antre User ID ak Zone ID ou (ou jwenn yo nan pwofil jwèt la).</string>
+    <string name="id_placeholder_single">Antre ID jwèt ou (chif sèlman)</string>
+    <string name="id_placeholder_dual">User ID (chif sèlman)</string>
+    <string name="zone_id_placeholder">Zone ID (chif sèlman)</string>
+    <string name="id_error_single">Antre yon ID valid (omwen 6 chif).</string>
+    <string name="id_error_dual">Antre yon User ID (omwen 6 chif) ak yon Zone ID (omwen 3 chif).</string>
+
+    <!-- Step 3: Payment -->
+    <string name="step_three_title">Chwazi mwayen peman</string>
+    <string name="payment_holder_prefix">Non: </string>
+    <string name="copy_number_label">Kopye nimewo</string>
+    <string name="copy_number_done">Kopye ✓</string>
+    <string name="payment_note_part1">Voye lajan an sou kont </string>
+    <string name="payment_note_part2">, epi voye prèv peman an ak ID ou sou WhatsApp. Nou livre dyaman yo apre nou verifye peman an.</string>
+
+    <!-- Contact & Footer -->
+    <string name="contact_heading">Kontakt</string>
+    <string name="contact_whatsapp_label">WhatsApp: </string>
+    <string name="contact_whatsapp_display">+509 3551-4145</string>
+    <string name="contact_email_label">Email: </string>
+    <string name="contact_email_address">johnstorebusiness01@gmail.com</string>
+    <string name="footer_copyright">© CheetahXpress 🐆</string>
+
+    <!-- Order Bar -->
+    <string name="no_pack_selected">Pa gen pack chwazi</string>
+    <string name="empty_price_placeholder">—</string>
+    <string name="order_button_label">Kòmande</string>
+    <string name="cd_whatsapp_icon">WhatsApp</string>
+    <string name="cd_selected_check">Chwazi</string>
+    <string name="currency_htg">HTG</string>
+    <string name="whatsapp_open_error">Pa ka ouvri WhatsApp. Tcheke si w gen yon navigatè oswa WhatsApp enstale.</string>
+    <string name="email_open_error">Pa gen aplikasyon email ki disponib.</string>
+</resources>

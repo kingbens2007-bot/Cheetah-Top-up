@@ -1,0 +1,8 @@
+{
+  "name": "CheetahXpress",
+  "description": "Rechaj jwèt rapid ak sèvis ki fyab (Free Fire, PUBG Mobile, Mobile Legends, ak plis ankò) ak peman NatCash & MonCash.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
